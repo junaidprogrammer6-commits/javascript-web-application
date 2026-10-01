@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TaskFlow — JavaScript Web Application</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><div class="w">
+<div class="brand"><span class="dot"></span><h1>TaskFlow</h1></div>
+<button class="theme-btn" id="themeBtn" aria-label="Toggle light or dark mode">◐</button>
+</div></header>
+
+<div class="w">
+<div class="card">
+<div class="stats">
+  <div class="stat"><b id="statTotal">0</b><span>Total</span></div>
+  <div class="stat"><b id="statPending">0</b><span>Pending</span></div>
+  <div class="stat"><b id="statDone">0</b><span>Done</span></div>
+  <div class="stat"><b id="statOverdue">0</b><span>Overdue</span></div>
+</div>
+<div class="progress"><i id="progressBar"></i></div>
+</div>
+
+<div class="card">
+<form id="taskForm">
+  <input name="title" placeholder="What needs to be done?" required maxlength="120">
+  <div class="row">
+    <input name="category" placeholder="Category (optional)" maxlength="40">
+    <select name="priority" id="priority">
+      <option>Low</option><option selected>Medium</option><option>High</option>
+    </select>
+    <input name="dueDate" type="date">
+  </div>
+  <button class="btn" type="submit">Add Task</button>
+</form>
+</div>
+
+<div class="toolbar">
+  <input type="text" id="search" placeholder="Search tasks...">
+  <select id="statusFilter">
+    <option value="all">All status</option>
+    <option value="pending">Pending</option>
+    <option value="done">Done</option>
+  </select>
+  <select id="priorityFilter">
+    <option value="all">All priority</option>
+    <option>Low</option><option>Medium</option><option>High</option>
+  </select>
+</div>
+
+<div id="taskList"></div>
+
+<footer>Data is saved in this browser only (localStorage) — no server needed.</footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
